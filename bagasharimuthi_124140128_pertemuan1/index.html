@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini POS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Kasir</h1>
+      <button id="transaksiBaru">Transaksi Baru</button>
+    </header>
+
+    <main>
+      <h2>Tambah Barang</h2>
+      <form id="formBarang" novalidate>
+        <label for="nama">Nama Barang</label>
+        <input type="text" placeholder="Air Mineral" id="nama" />
+        <p id="errNama"></p>
+        <label for="harga">Harga</label>
+        <input type="number" placeholder="500" id="harga" />
+        <p id="errHarga"></p>
+        <label for="jumlah">Jumlah</label>
+        <input type="number" placeholder="1" id="jumlah" />
+        <p id="errJumlah"></p>
+
+        <button type="submit">Tambah ke Keranjang</button>
+      </form>
+
+      <h2>Keranjang Belanja</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama Barang</th>
+              <th>Harga Satuan</th>
+              <th>Qty</th>
+              <th>Subtotal</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="isiKeranjang"></tbody>
+        </table>
+      </div>
+      <p id="keranjangKosong">Keranjang masih kosong. Tambahkan barang untuk memulai.</p>
+
+      <h2>Pembayaran</h2>
+      <p>Total Belanja: Rp<span id="totalBelanja"></span></p>
+      <p>Diskon: Rp<span id="diskon"></span></p>
+      <p>Total Akhir: Rp<span id="totalAkhir"></span></p>
+
+      <label for="kodePromo">Kode Promo (opsional)</label>
+      <input type="text" placeholder="HEMAT10" id="kodePromo" />
+      <p id="errKodePromo"></p>
+
+      <label for="uangBayar">Uang Bayar Rp</label>
+      <input type="number" placeholder="10000" id="uangBayar" />
+      <p id="errUangBayar"></p>
+
+      <p>Kembalian: Rp<span id="kembalian">0</span></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

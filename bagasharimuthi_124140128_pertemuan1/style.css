@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f7f4f0;
+    color: #332b25;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px max(20px, calc((100% - 900px) / 2));
+    background-color: #754626;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+main {
+    max-width: 900px;
+    margin: 28px auto;
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #eadfd5;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgb(70 45 25 / 8%);
+}
+
+h2 {
+    margin: 28px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eadfd5;
+    color: #754626;
+    font-size: 20px;
+}
+
+h2:first-child {
+    margin-top: 0;
+}
+
+form {
+    display: grid;
+    justify-content: center;
+    gap: 8px;
+}
+
+label {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input {
+    width: 280px;
+    max-width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d5c8bc;
+    border-radius: 6px;
+    font: inherit;
+}
+
+input:focus {
+    border-color: #a45f2b;
+    outline: 2px solid rgb(164 95 43 / 18%);
+}
+
+button {
+    min-height: 40px;
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #d98a35;
+    color: #27190d;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+button:hover {
+    background-color: #c87325;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+header button {
+    background-color: #fff;
+    color: #754626;
+}
+
+header button:hover {
+    background-color: #f1e6dc;
+}
+
+form button {
+    margin-top: 8px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: max-content;
+    margin: 16px auto;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+th,
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eadfd5;
+    text-align: center;
+}
+
+th {
+    background-color: #f7f1eb;
+    color: #593a24;
+    text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #fcf8f4;
+}
+
+main > p {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 420px;
+    margin: 10px auto;
+}
+
+#keranjangKosong {
+    justify-content: center;
+    color: #76685d;
+    font-size: 14px;
+}
+
+#keranjangKosong[hidden] {
+    display: none;
+}
+
+#errNama, #errHarga, #errJumlah, #errKodePromo, #errUangBayar {
+    display: block;
+    margin: 0;
+    color: #b42318;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 14px 16px;
+    }
+
+    header h1 {
+        font-size: 21px;
+    }
+
+    main {
+        margin: 14px 10px;
+        padding: 18px 14px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
