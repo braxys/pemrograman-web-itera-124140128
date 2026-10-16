@@ -1,13 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Dashboard Mahasiswa - Bagas Hari Muthi (124140128)</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <script src="script.js"></script>
+
+  <header class="app-header">
+    <div class="header-container">
+      <div class="user-profile">
+        <h1 class="app-title">Personal Dashboard Mahasiswa</h1>
+        <p class="user-meta">Bagas Hari Muthi &bull; NIM 124140128 &bull; Teknik Informatika ITERA</p>
+      </div>
+
+      <div class="header-right">
+
+        <div class="time-widget">
+          <div id="liveClock" class="live-clock">--:--:-- WIB</div>
+          <div id="liveDate" class="live-date">Memuat tanggal...</div>
+        </div>
+
+        <div id="weatherWidget" class="weather-widget">
+          <span class="widget-loading">Memuat cuaca...</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <section class="quote-card">
+      <div class="quote-header">
+        <span class="quote-label">💡 Kutipan Hari Ini</span>
+        <button id="refreshQuoteBtn" class="btn-text" type="button" title="Ganti kutipan acak">Kutipan Baru ⟳</button>
+      </div>
+      <div id="quoteContainer" class="quote-body">
+        <p class="quote-text italic">"Memuat kutipan hari ini..."</p>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-title">Total Tugas</span>
+        <span id="statTotal" class="stat-number">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-title">Belum Selesai</span>
+        <span id="statActive" class="stat-number stat-pending">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-title">Sudah Selesai</span>
+        <span id="statCompleted" class="stat-number stat-done">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-title">Prioritas Tinggi</span>
+        <span id="statHighPriority" class="stat-number stat-urgent">0</span>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+
+      <aside class="panel-card form-panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Tambah Tugas Baru</h2>
+        </div>
+
+        <form id="taskForm" class="task-form">
+          <div class="form-group">
+            <label for="taskTitle">Judul Tugas <span class="required">*</span></label>
+            <input
+              type="text"
+              id="taskTitle"
+              placeholder="Contoh: Praktikum Web Pertemuan 2"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="taskCategory">Mata Kuliah / Kategori</label>
+            <input
+              type="text"
+              id="taskCategory"
+              list="categorySuggestions"
+              placeholder="Pilih atau ketik kategori..."
+            />
+            <datalist id="categorySuggestions">
+              <option value="Pemrograman Web"></option>
+              <option value="Struktur Data"></option>
+              <option value="Basis Data"></option>
+              <option value="Rekayasa Perangkat Lunak"></option>
+              <option value="Jaringan Komputer"></option>
+              <option value="Organisasi & Pribadi"></option>
+            </datalist>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group form-col">
+              <label for="taskPriority">Prioritas</label>
+              <select id="taskPriority">
+                <option value="sedang">Sedang</option>
+                <option value="tinggi">Tinggi</option>
+                <option value="rendah">Rendah</option>
+              </select>
+            </div>
+
+            <div class="form-group form-col">
+              <label for="taskDueDate">Tenggat Waktu</label>
+              <input type="date" id="taskDueDate" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="taskNotes">Catatan Tambahan (Opsional)</label>
+            <textarea
+              id="taskNotes"
+              rows="3"
+              placeholder="Detail tugas, link referensi, atau instruksi..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            + Simpan Tugas
+          </button>
+        </form>
+      </aside>
+
+      <section class="panel-card list-panel">
+        <div class="panel-header list-panel-header">
+          <div class="list-title-wrap">
+            <h2 class="panel-title">Daftar Tugas Kuliah</h2>
+            <span id="taskCountBadge" class="count-badge">0 tugas</span>
+          </div>
+
+          <div class="action-buttons-wrap">
+            <button id="seedDataBtn" type="button" class="btn btn-secondary btn-sm" title="Muat contoh tugas dari mata kuliah informatika">
+              📥 Muat Contoh Tugas Informatika
+            </button>
+            <button id="clearCompletedBtn" type="button" class="btn btn-outline-danger btn-sm" title="Hapus tugas yang sudah selesai">
+              Bersihkan Selesai
+            </button>
+          </div>
+        </div>
+
+        <div class="filter-toolbar">
+          <div class="search-wrap">
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Cari tugas, mata kuliah, atau catatan..."
+            />
+          </div>
+
+          <div class="filters-row">
+            <select id="statusFilter" class="filter-select" aria-label="Filter Status">
+              <option value="all">Semua Status</option>
+              <option value="active">Belum Selesai</option>
+              <option value="completed">Sudah Selesai</option>
+            </select>
+
+            <select id="categoryFilter" class="filter-select" aria-label="Filter Kategori">
+              <option value="all">Semua Kategori</option>
+            </select>
+
+            <select id="priorityFilter" class="filter-select" aria-label="Filter Prioritas">
+              <option value="all">Semua Prioritas</option>
+              <option value="tinggi">Prioritas Tinggi</option>
+              <option value="sedang">Prioritas Sedang</option>
+              <option value="rendah">Prioritas Rendah</option>
+            </select>
+
+            <select id="sortBy" class="filter-select" aria-label="Urutkan">
+              <option value="deadline">Urut: Deadline Terdekat</option>
+              <option value="newest">Urut: Terbaru Ditambahkan</option>
+              <option value="priority">Urut: Prioritas Tertinggi</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="taskList" class="task-list-container">
+
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <div id="editModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h3 id="modalTitle" class="modal-title">Edit Tugas</h3>
+      </div>
+
+      <form id="editForm" class="edit-form">
+        <input type="hidden" id="editTaskId" />
+
+        <div class="form-group">
+          <label for="editTitle">Judul Tugas <span class="required">*</span></label>
+          <input type="text" id="editTitle" required />
+        </div>
+
+        <div class="form-group">
+          <label for="editCategory">Mata Kuliah / Kategori</label>
+          <input type="text" id="editCategory" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group form-col">
+            <label for="editPriority">Prioritas</label>
+            <select id="editPriority">
+              <option value="rendah">Rendah</option>
+              <option value="sedang">Sedang</option>
+              <option value="tinggi">Tinggi</option>
+            </select>
+          </div>
+
+          <div class="form-group form-col">
+            <label for="editDueDate">Tenggat Waktu</label>
+            <input type="date" id="editDueDate" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="editNotes">Catatan Tambahan</label>
+          <textarea id="editNotes" rows="3"></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="cancelEditBtn" class="btn btn-secondary">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="app-footer">
+    <p>&copy; 2026 Bagas Hari Muthi (124140128) &bull; Tugas Praktikum Pengembangan Aplikasi Web (PAW) &bull; JavaScript Next Gen (ES6+)</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
