@@ -1,0 +1,82 @@
+:root {
+  --font-serif: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Palet Warna Natural Tenang (Low Contrast, Anti-AI) */
+  --bg-canvas: #F8F8F5;     /* Putih tulang lembut, sangat tenang untuk mata */
+  --bg-surface: #FFFFFF;    /* Panel kartu bersih menyatu */
+  --bg-subtle: #F0F1ED;     /* Latar sekunder halus */
+  --bg-card: #FFFFFF;
+  --text-main: #2D332F;     /* Teks utama: arang tenang, tidak hitam pekat */
+  --text-muted: #6C736E;    /* Teks sekunder: abu hijau lembut */
+  --text-subtle: #969C97;   /* Teks halus */
+
+  /* Garis Pemisah Halus */
+  --border-light: #E8EAE5;  /* Garis sangat halus */
+  --border-line: #DFE2DC;   /* Garis batas standar */
+  --border-darker: #C8CDC4;
+
+  /* Aksen Utama & Kedua yang Muted (Saturasi Rendah) */
+  --accent: #445E49;        /* Lumut tenang, tidak menusuk mata */
+  --accent-hover: #364C3B;
+  --accent-soft: #EEF2EE;
+  --accent-tint: rgba(68, 94, 73, 0.07);
+
+  --accent-secondary: #967C38; /* Kuning gandum antik redup, sangat kalem */
+  --accent-secondary-hover: #7E672C;
+  --accent-secondary-soft: #F8F5EC;
+
+  /* Titik Status Senada */
+  --status-milik: #445E49;  /* Muted moss */
+  --status-baca: #967C38;   /* Muted wheat/amber */
+  --status-beli: #758079;   /* Slate gray lembut */
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  background-color: var(--bg-canvas);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+}
+
+/* Aksesibilitas keyboard dengan focus ring yang halus */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(68, 94, 73, 0.35);
+  outline-offset: 2px;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Helper kelas untuk screen reader saja */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

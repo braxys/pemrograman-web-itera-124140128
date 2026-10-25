@@ -1,0 +1,142 @@
+.book-form-inner {
+  padding: 0.5rem 0;
+}
+
+.book-form-top {
+  margin-bottom: 1.5rem;
+}
+
+.book-form-heading {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.25rem 0;
+}
+
+.book-form-subheading {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.warm-form-group {
+  margin-bottom: 1.35rem;
+}
+
+.warm-label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.45rem;
+}
+
+.warm-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-line);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.warm-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: #FFFFFF;
+}
+
+.warm-input.input-error {
+  border-color: #A94438;
+  background-color: #FAF2F0;
+}
+
+.error-note {
+  display: block;
+  font-size: 0.8rem;
+  color: #A94438;
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+/* Segmented Control */
+.segmented-control {
+  display: flex;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  padding: 3px;
+  gap: 3px;
+}
+
+.segment-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.55rem 0.4rem;
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.segment-btn:hover {
+  color: var(--text-main);
+}
+
+.segment-active {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(43, 38, 34, 0.08);
+}
+
+/* Form Actions */
+.warm-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.warm-btn-primary {
+  background-color: var(--accent);
+  color: #FAF6EF;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.7rem 1.4rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.warm-btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.warm-btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-line);
+  border-radius: var(--radius-md);
+  padding: 0.7rem 1.2rem;
+  font-size: 0.925rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.warm-btn-ghost:hover {
+  background-color: var(--bg-subtle);
+  color: var(--text-main);
+}

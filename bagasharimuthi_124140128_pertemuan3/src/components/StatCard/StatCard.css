@@ -1,0 +1,58 @@
+.stat-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.stat-card-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.stat-card-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.stat-card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.stat-card-subtitle {
+  font-size: 0.775rem;
+  color: #94a3b8;
+  margin: 0.35rem 0 0 0;
+}
+
+.stat-blue {
+  border-left: 4px solid #2563eb;
+}
+
+.stat-emerald {
+  border-left: 4px solid #10b981;
+}
+
+.stat-sky {
+  border-left: 4px solid #0284c7;
+}
+
+.stat-amber {
+  border-left: 4px solid #f59e0b;
+}
+

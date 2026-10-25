@@ -1,0 +1,211 @@
+.book-shelf-list {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.book-row-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  background-color: var(--bg-surface);
+  transition: background-color 0.15s ease;
+  position: relative;
+}
+
+.book-row-item:last-child {
+  border-bottom: none;
+}
+
+.book-row-item:hover {
+  background-color: #F6F7F4;
+}
+
+.book-row-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.book-row-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.book-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.book-author {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.author-name {
+  color: var(--text-muted);
+}
+
+.book-status-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.2rem;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-milik {
+  background-color: var(--status-milik);
+}
+
+.dot-baca {
+  background-color: var(--status-baca);
+}
+
+.dot-beli {
+  background-color: var(--status-beli);
+}
+
+.dot-default {
+  background-color: var(--text-subtle);
+}
+
+.status-text {
+  font-size: 0.775rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+
+/* Aksi Edit dan Hapus */
+.book-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.action-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.action-icon-btn:hover {
+  background-color: var(--bg-subtle);
+  color: var(--text-main);
+}
+
+.action-delete:hover {
+  background-color: #FBECE8;
+  color: var(--accent);
+}
+
+/* Empty State */
+.book-shelf-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--bg-surface);
+  border: 1px dashed var(--border-line);
+  border-radius: var(--radius-lg);
+  margin-top: 0.5rem;
+}
+
+.empty-ornament {
+  display: inline-flex;
+  margin-bottom: 0.85rem;
+  opacity: 0.85;
+}
+
+.empty-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.5rem 0;
+}
+
+.empty-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 440px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.5;
+}
+
+.empty-action-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.4rem 0.85rem;
+  border-bottom: 1px solid var(--accent);
+}
+
+.empty-action-btn:hover {
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent-hover);
+}
+
+.empty-action-btn-primary {
+  background-color: var(--accent);
+  color: #FAF6EF;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.empty-action-btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+@media (max-width: 640px) {
+  .book-row-item {
+    gap: 0.85rem;
+    padding: 0.9rem 0.85rem;
+  }
+
+  .action-text {
+    display: none;
+  }
+
+  .action-icon-btn {
+    padding: 0.45rem;
+  }
+}

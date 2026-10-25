@@ -1,0 +1,368 @@
+.stats-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 4rem 1.5rem;
+}
+
+.stats-breadcrumb {
+  margin-bottom: 1rem;
+}
+
+.stats-back-link {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.stats-back-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.stats-header {
+  margin-bottom: 2rem;
+}
+
+.stats-page-title {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.4rem 0;
+  letter-spacing: -0.02em;
+}
+
+.stats-page-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Hero Banner Stat */
+.stats-hero-banner {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(43, 38, 34, 0.04);
+  flex-wrap: wrap;
+}
+
+.hero-stat-primary {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-number {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.hero-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+.hero-stat-divider {
+  width: 1px;
+  height: 60px;
+  background-color: var(--border-line);
+}
+
+.hero-metrics-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.metric-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-value-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.metric-number {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--text-main);
+  line-height: 1.1;
+}
+
+.metric-label {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+/* Stacked Bar Distribusi */
+.stats-distribution-section {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.section-serif-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 1.25rem 0;
+}
+
+.stacked-track {
+  width: 100%;
+  height: 14px;
+  background-color: var(--bg-subtle);
+  border-radius: 7px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 1.15rem;
+}
+
+.stacked-segment {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.segment-milik {
+  background-color: var(--status-milik);
+}
+
+.segment-baca {
+  background-color: var(--status-baca);
+}
+
+.segment-beli {
+  background-color: var(--status-beli);
+}
+
+.stacked-legend {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Buku yang Sedang Aktif Dibaca */
+.stats-reading-active-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.reading-badge-count {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.active-reading-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.active-reading-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  gap: 1.15rem;
+  align-items: center;
+}
+
+.active-reading-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.reading-header-wrap {
+  margin-bottom: 0.75rem;
+}
+
+.active-book-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.2rem 0;
+  line-height: 1.3;
+}
+
+.active-book-author {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+.page-progress-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.progress-text-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.page-track {
+  width: 100%;
+  height: 6px;
+  background-color: var(--bg-subtle);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.page-fill {
+  height: 100%;
+  background-color: var(--status-baca);
+  border-radius: 3px;
+}
+
+.last-read-note {
+  font-size: 0.725rem;
+  color: var(--text-subtle);
+  margin-top: 2px;
+}
+
+.empty-reading-card {
+  background-color: var(--bg-surface);
+  border: 1px dashed var(--border-line);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+}
+
+.empty-stats-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Sentuhan Manusiawi */
+.stats-human-touch {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.reading-quote {
+  margin: 0;
+  max-width: 580px;
+}
+
+.quote-body {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin: 0 0 0.4rem 0;
+  line-height: 1.5;
+}
+
+.quote-author {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+.reading-target-chip {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-line);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.target-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.target-stat {
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+@media (max-width: 720px) {
+  .stats-hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .hero-stat-divider {
+    display: none;
+  }
+
+  .hero-metrics-row {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .stats-human-touch {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
+}

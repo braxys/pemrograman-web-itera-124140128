@@ -1,0 +1,119 @@
+.filter-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Search Bar Ringan (Underline Style) */
+.search-minimal-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid var(--border-line);
+  transition: border-color 0.2s ease;
+  padding-bottom: 0.25rem;
+}
+
+.search-minimal-box:focus-within {
+  border-bottom-color: var(--accent);
+}
+
+.search-glyph {
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.search-minimal-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0.5rem 1.75rem 0.5rem 1.75rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.search-minimal-input::placeholder {
+  color: var(--text-subtle);
+  font-style: italic;
+}
+
+.search-minimal-input:focus {
+  outline: none;
+}
+
+.search-clear-minimal {
+  position: absolute;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--text-subtle);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.search-clear-minimal:hover {
+  color: var(--text-main);
+}
+
+/* Tabs Filter Status */
+.status-tabs-row {
+  display: flex;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.status-tabs-row::-webkit-scrollbar {
+  display: none;
+}
+
+.status-tab-btn {
+  background: none;
+  border: none;
+  padding: 0.6rem 0.15rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.925rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.status-tab-btn:hover {
+  color: var(--text-main);
+}
+
+.status-tab-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+.tab-count-pill {
+  font-size: 0.75rem;
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  padding: 0.1rem 0.45rem;
+  border-radius: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.status-tab-active .tab-count-pill {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+}

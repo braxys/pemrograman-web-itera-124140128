@@ -1,0 +1,39 @@
+.notfound-container {
+  max-width: 540px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.notfound-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  box-shadow: 0 1px 3px rgba(43, 38, 34, 0.04);
+}
+
+.notfound-code {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 3.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.notfound-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.5rem 0;
+}
+
+.notfound-desc {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  margin: 0 0 1.75rem 0;
+  line-height: 1.55;
+}
